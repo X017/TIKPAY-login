@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-p9#(&#aa6-k_zg--(-v)w-y_f)4=c=*_5x(3k4y86rvky!k-_2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1','0.0.0.0','localhost']
 
 
 # Application definition
@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'customers',
     'rest_framework',
     'langdetect',
-    'api'
+    'api',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -53,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware'
 ]
 
 ROOT_URLCONF = 'lodrf.urls'
@@ -78,7 +80,9 @@ WSGI_APPLICATION = 'lodrf.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
-
+CORS_ALLOWED_ORIGINS = [
+        "http://localhost:3333"
+        ]
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
