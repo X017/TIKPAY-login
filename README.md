@@ -6,7 +6,6 @@
 - **Method**: `POST`
 - **Description**: This endpoint creates a new user.
 - **Request Body**:
-  ```json
   {
     "faFirstName": "string",         // Required, Farsi first name
     "faLastName": "string",          // Required, Farsi last name
@@ -24,4 +23,12 @@
     "faTerminalName": "string",      // Required, Farsi terminal name
     "enTerminalName": "string"       // Required, English terminal name
   }
+## Upload Picture Endpoint
+
+- **URL**: `/v1/upload/<int:pk>/`
+- **Method**: `PUT`
+- **Description**: This endpoint uses the user ID to upload their picture.
+- **Request Body**:
+  ```form-data
+  file: <file>
 
