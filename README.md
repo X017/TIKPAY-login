@@ -6,6 +6,7 @@
 - **Method**: `POST`
 - **Description**: This endpoint creates a new user.
 - **Request Body**:
+  ```json
   {
     "faFirstName": "string",         // Required, Farsi first name
     "faLastName": "string",          // Required, Farsi last name
@@ -14,12 +15,12 @@
     "email": "string",               // Required, email address
     "faFatherName": "string",        // Required, Farsi father's name
     "birthDay": "date",              // Required, birth date
-    "nationalCode": "string",        // Required, national code
-    "mobile": "string",              // Required, mobile number
-    "phone": "string",               // Required, phone number
+    "nationalCode": "string",        // Required, national code max_length = 10
+    "mobile": "string",              // Required, mobile number max_length = 10
+    "phone": "string",               // Required, phone number max_length = 10
     "address": "string",             // Required, address
-    "cardNumber": "string",          // Required, card number
-    "shabaNumber": "string",         // Required, Shaba number
+    "cardNumber": "string",          // Required, card number max_length = 16
+    "shabaNumber": "string",         // Required, Shaba number max_length = 24
     "faTerminalName": "string",      // Required, Farsi terminal name
     "enTerminalName": "string"       // Required, English terminal name
   }
@@ -31,4 +32,3 @@
 - **Request Body**:
   ```form-data
   file: <file>
-
